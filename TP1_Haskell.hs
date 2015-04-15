@@ -14,3 +14,6 @@ mensajitoOK lista_cadenas | length (filterSmallStrings (lengthStrings lista_cade
 						              |  length (filterSmallStrings (lengthStrings lista_cadenas)) < length (filterBigStrings (lengthStrings lista_cadenas))  = "No es mensajito"
 						              | otherwise = "Misma cantidad"
 
+Punto 4) 
+
+Empezando a hacer el Punto 4
