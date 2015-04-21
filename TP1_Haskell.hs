@@ -49,3 +49,10 @@ Punto 4) Desarrollar la funcion cuentaPalabrasRusasEnTexto. Una palabra es consi
  palabraRusa cadena = (any (==k) cadena) && (any (==y) cadena)  
 
 cuentasPalabrasRusas lista = length (filter palabraRusa lista)
+
+punto 5)
+filtradoRadio lista = filter (<=5) lista
+filtradoNoRadio lista = not (filtradoradio lista)
+tamañoRadio lista = length (filtradoradio lista) 
+tamañonoRadio lista = length (filtradonoradio lista)
+centrada lista = (tamañonoradio lista) > (tamañonoradio lista)
