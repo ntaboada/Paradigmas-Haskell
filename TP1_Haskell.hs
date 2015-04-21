@@ -50,9 +50,36 @@ Punto 4) Desarrollar la funcion cuentaPalabrasRusasEnTexto. Una palabra es consi
 
 cuentasPalabrasRusas lista = length (filter palabraRusa lista)
 
-punto 5)
-filtradoRadio lista = filter (<=5) lista
-filtradoNoRadio lista = not (filtradoradio lista)
-tamañoRadio lista = length (filtradoradio lista) 
-tamañonoRadio lista = length (filtradonoradio lista)
-centrada lista = (tamañonoradio lista) > (tamañonoradio lista)
+
+!!!!!!!!!!clase martes
+
+
+tamano           lista = map (length) lista
+listamenor       lista b = filter (<=b) (tamano lista)
+listamayor       lista b = filter (>b) (tamano lista)
+tamanolistamenor lista b = length (listamenor lista b)
+tamanolistamayor lista b = length (listamayor lista b)
+mensajito        lista b = (tamanolistamenor lista b) > (tamanolistamayor lista b)
+
+
+
+distancia (x,y) = sqrt ( x*x + y*y )
+
+cantidadDistancia lista = map (distancia) lista
+filtradoradio   lista b = filter (<=b) (cantidadDistancia lista)
+filtradonoradio lista b = filter (>b) (cantidadDistancia lista)
+tamañoradio     lista b = length (filtradoradio lista b ) 
+tamañonoradio   lista b = length (filtradonoradio lista b )
+centrada        lista b = (tamañoradio lista b ) > (tamañonoradio lista b )
+
+centrada2 lista b = laMayoriaCumple distancia lista b
+mensajito2 lista b = laMayoriaCumple tamano lista b
+
+
+laMayoriaCumple funcion lista valor = funcionMenor funcion lista valor > funcionMayor funcion lista valor
+funcionCompara funcion lista condicion = length (filter condicion (map funcion lista))
+funcionMenor funcion lista valor = funcionCompara funcion lista (<=valor)
+funcionMayor funcion lista valor = funcionCompara funcion lista (>valor)
+
+
+			   
