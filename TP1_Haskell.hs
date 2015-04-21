@@ -48,4 +48,4 @@ mensajitoOK lista_cadenas | length (filterSmallStrings (lengthStrings lista_cade
 Punto 4) Desarrollar la funcion cuentaPalabrasRusasEnTexto. Una palabra es considerada rusa si tiene los caracteres "k" e "y" y no tiene mas de dos vocales
  palabraRusa cadena = (any (==k) cadena) && (any (==y) cadena)  
 
-
+cuentasPalabrasRusas lista = length (filter palabraRusa lista)
