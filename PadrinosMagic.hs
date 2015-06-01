@@ -1,4 +1,8 @@
 --RECURSIVIDAD http://stackoverflow.com/questions/14820138/understanding-recursion-in-haskell
+--https://docs.google.com/document/d/1BjlypGu9abV9bY_qMt0OiSSBuSZ7wisZfxwGINgfxiQ/edit
+--CLASE PDEP https://docs.google.com/document/d/1le1Pxc2z_9f35U8JEqRwR_AxI3phcOp7IAaR1X00zWs/pub
+--CLASE PDEP https://docs.google.com/document/d/1Ydc1qZNOcCMP5PQlP1zjB75cRXILQ5cbeqmFslOPxIA/edit
+--FAMILIA FOLD https://docs.google.com/document/d/1jSrU7lVMan4nbHBETGqvO5VpqJI0KXVWtH7fqnVASPU/edit#
 
 data Chico = Unchico {nombre :: String, edad :: Int, habilidades :: [String], deseos :: [Chico->Chico]}  
 instance Show Chico where
