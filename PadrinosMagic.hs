@@ -4,6 +4,7 @@
 --CLASE PDEP https://docs.google.com/document/d/1Ydc1qZNOcCMP5PQlP1zjB75cRXILQ5cbeqmFslOPxIA/edit
 --FAMILIA FOLD https://docs.google.com/document/d/1jSrU7lVMan4nbHBETGqvO5VpqJI0KXVWtH7fqnVASPU/edit#
 
+
 data Chico = Unchico {nombre :: String, edad :: Int, habilidades :: [String], deseos :: [Chico->Chico]}  
 instance Show Chico where
   show c = "Soy el chico " ++ (nombre c) ++ "y tengo " ++ show (edad c) ++ " años " ++ "y tengo las habilidades " ++ show (habilidades c)
