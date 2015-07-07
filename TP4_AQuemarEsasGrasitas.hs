@@ -26,24 +26,25 @@ tonifganada (_, _ ,tfinal) (_, _ ,tinicial) = tfinal - tinicial
 
 --2.2 muchasRutinas
 
+data Rutina = UnaRutina{lejercicios:: [(Float -> Persona -> Persona)], tiempo::Float}
 muchasRutinas listarutinas persona = filter (rutinaSaludable ) listarutinas
-rutinaSaludable nombrerut listaejercicios tiempo persona = (saludable.realizoRutina listaejercicios tiempo) persona
+rutinaSaludable (UnaRutina lejercicios tiempo) persona = (saludable.realizoRutina lejercicios tiempo) persona
 --test muchasRutinas ["Rutina1"[caminata,entrenamientoEnCinta] 10, "Rutina2"[pesas 10, caminata, caminata] 5, "Rutina3"[colina 5, entrenamientoEnCinta] 15] (10,60,4) 
 
 --Ejercicio 3 Diferentes Profesores
 data Persona = UnaPersona {edad::Int, peso::Int, tonif::Int} 
-data Rutina = UnaRutina( Float, [(Float -> Persona -> Persona)]))
-data Ejercicio = UnEjercicio Int -> Persona -> Persona
-data ProfeConRutina = UnProfeConRutina String Rutina
-data ProfeConEjercicio = UnProfeConEjercicio String Ejercicio
-data ProfeVago = UnProfeVago String 
+data ProfeConEjercicio = UnProfeConEjercicio {ejercicio::(Int -> Persona -> Persona), tiempo::Float}
+data ProfeConRutina = UnProfeConRutina {rutina::Rutina, tiempo::Float}
+data ProfeVago = UnProfeVago {tiempo::Float}
 
 class Profesor a where
 elProfeConData :: a->Persona
 
 instance Profesor ProfeConEjercicio where
-elProfeConData (ProfeConEjercicio _ ejercicio minutos lpersonas) = (map (ejercicio (minutos)).filtrarPersonasNoSaludables) lpersonas
+elProfeConData (UnProfeConEjercicio ejercicio tiempo) lpersonas = (map (ejercicio (tiempo)).filtrarPersonasNoSaludables) lpersonas
 
 instance Profesor ProfeConRutina where
+elProfeConData (UnProfeConRutina rutina tiempo) lpersonas = (map ((realizoRutina rutina tiempo).filtrarPersonasNoSaludables) lpersonas 
 
 instance Profesor ProfeVago where
+elProfeConData (UnProfeVago tiempo) lpersonas = (map (filtrarPersonasNoSaludables) lpersonas)
